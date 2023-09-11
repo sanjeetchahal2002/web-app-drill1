@@ -30,7 +30,7 @@ const server = http.createServer( (request,response) => {
         const urlArray = request.url.split('/')
         console.log(urlArray)
         statusCode = urlArray[2]
-        response.writeHead(200,{'Content-type' : 'text/html'})
+        response.writeHead(Number(statusCode),{'Content-type' : 'text/html'})
         response.write(`Request Message : ${http.STATUS_CODES[statusCode]}`)
         response.end()
     }
